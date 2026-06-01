@@ -1,66 +1,111 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+"use client";
+
+import React, { useState } from "react";
+import Header from "../components/Header";
+import Hero from "../components/Hero";
+import Packages from "../components/Packages";
+import PackageModal from "../components/PackageModal";
+import Hotels from "../components/Hotels";
+import Contact from "../components/Contact";
+import EnquiryModal from "../components/EnquiryModal";
+import { Package } from "../data/packages";
 
 export default function Home() {
+  // Modal toggle states
+  const [selectedPackage, setSelectedPackage] = useState<Package | null>(null);
+  const [isPackageModalOpen, setIsPackageModalOpen] = useState(false);
+  const [isEnquiryModalOpen, setIsEnquiryModalOpen] = useState(false);
+  const [enquiryDefaultPackage, setEnquiryDefaultPackage] = useState("");
+
+  // Handler to open the details modal for a specific package
+  const handleSelectPackage = (pkg: Package) => {
+    setSelectedPackage(pkg);
+    setIsPackageModalOpen(true);
+  };
+
+  // Handler to open enquiry modal with general interest
+  const handleOpenGlobalEnquiry = () => {
+    setEnquiryDefaultPackage("");
+    setIsEnquiryModalOpen(true);
+  };
+
+  // Handler to open enquiry modal prefilled with a specific package name
+  const handleOpenPackageEnquiry = (packageName: string) => {
+    // Close the details modal first if it is open
+    setIsPackageModalOpen(false);
+    setEnquiryDefaultPackage(packageName);
+    setIsEnquiryModalOpen(true);
+  };
+
+  // Smooth scroll helper for Hero view button
+  const handleScrollToPackages = () => {
+    const packagesSection = document.getElementById("packages");
+    if (packagesSection) {
+      const headerOffset = 80;
+      const elementPosition = packagesSection.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+      });
+    }
+  };
+
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>To get started, edit the page.tsx file.</h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <>
+      {/* Fixed Navigation Header */}
+      <Header onEnquireClick={handleOpenGlobalEnquiry} />
+
+      <main style={{ minHeight: "100vh" }}>
+        {/* Split Screen Hero Showcase */}
+        <Hero onExplorePackagesClick={handleScrollToPackages} />
+
+        {/* Dynamic Card Grid Section for 6 Tours */}
+        <Packages onSelectPackage={handleSelectPackage} />
+
+        {/* Teaser section: Partner hotels "Under Process" */}
+        <Hotels />
+
+        {/* Contact info, local portal links & Message Form */}
+        <Contact />
+      </main>
+
+      {/* Styled Footer */}
+      <footer
+        style={{
+          backgroundColor: "#0d0f14",
+          borderTop: "1px solid var(--border-color)",
+          padding: "2rem 1.5rem",
+          textAlign: "center",
+          fontSize: "0.85rem",
+          color: "var(--text-muted)"
+        }}
+      >
+        <div className="container">
+          <p style={{ marginBottom: "0.5rem" }}>
+            &copy; {new Date().getFullYear()} Vagad Safaris. All Rights Reserved.
+          </p>
+          <p style={{ fontSize: "0.75rem" }}>
+            Promoting sustainable, community-first tribal tourism under the Rajasthan Rural Tourism Scheme.
           </p>
         </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+      </footer>
+
+      {/* Slide-Up Package Details Overlay */}
+      <PackageModal
+        pkg={selectedPackage}
+        isOpen={isPackageModalOpen}
+        onClose={() => setIsPackageModalOpen(false)}
+        onEnquire={handleOpenPackageEnquiry}
+      />
+
+      {/* Central Booking & Enquiry Form Modal */}
+      <EnquiryModal
+        isOpen={isEnquiryModalOpen}
+        defaultPackage={enquiryDefaultPackage}
+        onClose={() => setIsEnquiryModalOpen(false)}
+      />
+    </>
   );
 }
