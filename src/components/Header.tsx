@@ -81,7 +81,7 @@ export default function Header({ onEnquireClick }: HeaderProps) {
             <path d="M12 8a4 4 0 0 1 4 4m-8 0a4 4 0 0 1 4-4" />
           </svg>
           <div className={styles.logoText}>
-            <span>VAGAD SAFARIS</span>
+            <span>VAGAD & MEWAL SAFARIS</span>
             <span className={styles.logoSub}>Tribal Rajasthan</span>
           </div>
         </div>

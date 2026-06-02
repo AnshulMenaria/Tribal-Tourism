@@ -84,7 +84,7 @@ export default function Home() {
       >
         <div className="container">
           <p style={{ marginBottom: "0.5rem" }}>
-            &copy; {new Date().getFullYear()} Vagad Safaris. All Rights Reserved.
+            &copy; {new Date().getFullYear()} Vagad & Mewal Safaris. All Rights Reserved.
           </p>
           <p style={{ fontSize: "0.75rem" }}>
             Promoting sustainable, community-first tribal tourism under the Rajasthan Rural Tourism Scheme.

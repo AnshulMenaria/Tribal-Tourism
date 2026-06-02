@@ -54,7 +54,7 @@ export default function Contact() {
       <div className="container">
         <h2 className="section-title">Get in Touch</h2>
         <p className="section-subtitle">
-          Have questions about the Vagad circuit? Want a custom tribal itinerary? Reach out to our travel directors.
+          Have questions about the Vagad & Mewal circuit? Want a custom tribal itinerary? Reach out to our travel directors.
         </p>
 
         <div className={styles.splitGrid}>
@@ -63,7 +63,7 @@ export default function Contact() {
             <div>
               <h3 className={styles.introTitle}>Headquarters</h3>
               <p className={styles.introDesc}>
-                Our base office is located in Banswara, the center of the Vagad circuit. Stop by for maps, itinerary plans, or to meet our local guides.
+                Our base office is located in Banswara, the center of the Vagad & Mewal circuit. Stop by for maps, itinerary plans, or to meet our local guides.
               </p>
 
               <div className={styles.contactList}>
@@ -137,7 +137,7 @@ export default function Contact() {
                 </div>
                 <h3 className={styles.successTitle}>Message Sent!</h3>
                 <p className={styles.successMessage}>
-                  Thank you for reaching out. A travel specialist from our Vagad team will contact you within 24 hours.
+                  Thank you for reaching out. A travel specialist from our Vagad & Mewal team will contact you within 24 hours.
                 </p>
                 <button
                   onClick={() => setIsSubmitted(false)}

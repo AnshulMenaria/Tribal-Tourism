@@ -13,7 +13,7 @@ export default function Hero({ onExplorePackagesClick }: HeroProps) {
       {/* Left Split - Half Screen Background Image */}
       <div className={styles.splitLeft}>
         <div className={styles.leftContent}>
-          <span className={styles.locationBadge}>Vagad Region</span>
+          <span className={styles.locationBadge}>Vagad & Mewal Regions</span>
           <h2 className={styles.leftTitle}>Misty Hills & Sacred Confluences</h2>
           <p className={styles.leftSubtitle}>
             Witness the monsoons turn the rugged cliffs of Banswara and Dungarpur into a lush green paradise, dotted with rivers and ancient temples.
@@ -29,7 +29,7 @@ export default function Hero({ onExplorePackagesClick }: HeroProps) {
             Experience <span className={styles.highlightText}>Tribal</span> Tourism
           </h1>
           <p className={styles.description}>
-            Welcome to the land of the Bhils. Nestled in the southern highlands of Rajasthan, this circuit offers a rare window into age-old tribal traditions, authentic organic forest gastronomy, vibrant weekly haat bazaars, and pristine, unexplored eco-zones.
+            Welcome to these historic tribal lands. Nestled in the southern highlands of Rajasthan, this circuit offers a rare window into age-old tribal traditions, authentic organic forest gastronomy, vibrant weekly haat bazaars, and pristine, unexplored eco-zones.
           </p>
 
           {/* Targeted Cities */}
@@ -76,7 +76,7 @@ export default function Hero({ onExplorePackagesClick }: HeroProps) {
                 rel="noopener noreferrer" 
                 style={{ color: "var(--accent-secondary)", textDecoration: "underline", fontWeight: 600 }}
               >
-                Vagad Tribal Circuit
+                Vagad & Mewal Tribal Circuit
               </a>
             </span>
           </div>

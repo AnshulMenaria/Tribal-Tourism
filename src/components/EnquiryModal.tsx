@@ -139,7 +139,7 @@ export default function EnquiryModal({ isOpen, defaultPackage, onClose }: Enquir
             </div>
             <h3 className={styles.successTitle}>Enquiry Received!</h3>
             <p className={styles.successMessage}>
-              Your custom tour request has been logged successfully. A travel advisor from Vagad Safaris will contact you on your phone number or email within 12 hours with customized options.
+              Your custom tour request has been logged successfully. A travel advisor from Vagad & Mewal Safaris will contact you on your phone number or email within 12 hours with customized options.
             </p>
             <button onClick={onClose} className="btn btn-primary">
               Done
@@ -228,7 +228,7 @@ export default function EnquiryModal({ isOpen, defaultPackage, onClose }: Enquir
                 className={styles.select}
                 disabled={isSubmitting}
               >
-                <option value="general">General Vagad Circuit Enquiry</option>
+                <option value="general">General Vagad & Mewal Circuit Enquiry</option>
                 {travelPackages.map((p) => (
                   <option key={p.id} value={p.name}>
                     {p.name}
