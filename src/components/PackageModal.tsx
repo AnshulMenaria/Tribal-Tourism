@@ -54,10 +54,14 @@ export default function PackageModal({ pkg, isOpen, onClose, onEnquire }: Packag
         {/* Scrollable details */}
         <div className={styles.modalScrollArea}>
           {/* Header Image */}
-          <div
-            className={styles.modalHeaderPhoto}
-            style={{ backgroundImage: `url(${pkg.image})` }}
-          >
+          <div className={styles.modalHeaderPhoto}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={pkg.image}
+              alt={pkg.name}
+              className={styles.modalHeaderImage}
+              referrerPolicy="no-referrer"
+            />
             <div className={styles.headerTitleWrapper}>
               <span className={styles.headerBadge}>{pkg.days}</span>
               <h2 className={styles.headerTitle}>{pkg.name}</h2>
@@ -75,6 +79,31 @@ export default function PackageModal({ pkg, isOpen, onClose, onEnquire }: Packag
                 <span className={styles.metaLabel}>End Location</span>
                 <span className={styles.metaValue}>{pkg.end}</span>
               </div>
+            </div>
+
+            {/* Official Link Block */}
+            <div className={styles.linkContainer}>
+              <a
+                href={pkg.officialLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.officialLinkBtn}
+              >
+                <svg
+                  className={styles.linkIcon}
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                  <polyline points="15 3 21 3 21 9"></polyline>
+                  <line x1="10" y1="14" x2="21" y2="3"></line>
+                </svg>
+                Official Tourism Information Portal
+              </a>
             </div>
 
             {/* Attractions */}

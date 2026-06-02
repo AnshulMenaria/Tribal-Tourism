@@ -40,6 +40,7 @@ export default function Packages({ onSelectPackage }: PackagesProps) {
                   alt={pkg.name}
                   className={styles.image}
                   loading="lazy"
+                  referrerPolicy="no-referrer"
                 />
               </div>
 

@@ -3,6 +3,7 @@ export interface Package {
   name: string;
   price: number;
   image: string;
+  officialLink: string;
   start: string;
   end: string;
   days: string;
@@ -17,7 +18,8 @@ export const travelPackages: Package[] = [
     id: "mahi-river-explorer",
     name: "Mahi River & Island Explorer (Banswara)",
     price: 1499,
-    image: "https://upload.wikimedia.org/wikipedia/commons/4/4c/Mahi_Dam._Banswara..jpg",
+    image: "https://upload.wikimedia.org/wikipedia/commons/2/2c/Mahi_Bajaj_Sagar_Dam%2C_Banswara.jpg",
+    officialLink: "https://banswara.rajasthan.gov.in/tourist-places/",
     start: "Banswara City Center (8:00 AM)",
     end: "Banswara City Center (6:00 PM)",
     days: "1 Day (0 Nights)",
@@ -46,7 +48,8 @@ export const travelPackages: Package[] = [
     id: "dungarpur-heritage-trail",
     name: "Historic Dungarpur Heritage & Art Trail",
     price: 1799,
-    image: "https://upload.wikimedia.org/wikipedia/commons/1/18/Juna_Mahal_Dungarpur_16.jpg",
+    image: "https://upload.wikimedia.org/wikipedia/commons/8/8a/Juna_Mahal_Dungarpur_16.jpg",
+    officialLink: "https://dungarpur.rajasthan.gov.in/tourist-places/",
     start: "Dungarpur Railway Station/Bus Stand (9:00 AM)",
     end: "Dungarpur City (7:00 PM)",
     days: "1 Day (0 Nights)",
@@ -74,7 +77,8 @@ export const travelPackages: Package[] = [
     id: "sitamata-wilderness-safari",
     name: "Sitamata Wilderness & Flying Squirrel Safari",
     price: 3999,
-    image: "https://upload.wikimedia.org/wikipedia/commons/e/ee/River_Jakham_in_Sitamata_sanctuary_in_Pratapgarh.jpg",
+    image: "https://upload.wikimedia.org/wikipedia/commons/6/6f/River_Jakham_in_Sitamata_sanctuary_in_Pratapgarh.jpg",
+    officialLink: "https://pratapgarh.rajasthan.gov.in/tourist-place/sita-mata-wildlife-sanctuary/",
     start: "Pratapgarh Town (12:00 PM - Day 1)",
     end: "Pratapgarh Town (1:00 PM - Day 2)",
     days: "2 Days / 1 Night",
@@ -104,7 +108,8 @@ export const travelPackages: Package[] = [
     id: "baneshwar-cultural-festival",
     name: "The Sacred Confluence & Tribal Culture Experience",
     price: 3499,
-    image: "https://upload.wikimedia.org/wikipedia/commons/f/ff/Beneshwar_dham.JPG",
+    image: "https://upload.wikimedia.org/wikipedia/commons/3/33/Beneshwar_dham.JPG",
+    officialLink: "https://dungarpur.rajasthan.gov.in/tourist-place/baneshwar-temple/",
     start: "Dungarpur or Banswara Town (10:00 AM - Day 1)",
     end: "Dungarpur or Banswara Town (5:00 PM - Day 2)",
     days: "2 Days / 1 Night",
@@ -132,7 +137,8 @@ export const travelPackages: Package[] = [
     id: "salumbar-royal-lakes",
     name: "Salumbar Royal Forts & Sacred Lakes Tour",
     price: 1299,
-    image: "https://upload.wikimedia.org/wikipedia/commons/3/30/Jaisamandlake.jpg",
+    image: "https://upload.wikimedia.org/wikipedia/commons/6/63/Jaisamandlake.jpg",
+    officialLink: "https://salumbar.rajasthan.gov.in/",
     start: "Salumbar Center (8:30 AM)",
     end: "Salumbar Center (5:30 PM)",
     days: "1 Day (0 Nights)",
@@ -159,7 +165,8 @@ export const travelPackages: Package[] = [
     id: "vagad-heritage-caravan",
     name: "Vagad & Mewal Tribal Heritage Caravan (The Ultimate Circuit)",
     price: 8999,
-    image: "https://upload.wikimedia.org/wikipedia/commons/1/15/Gaib_Sagar_Lake_Dungarpur_5.jpg",
+    image: "https://upload.wikimedia.org/wikipedia/commons/4/4f/Gaib_Sagar_Lake_Dungarpur_5.jpg",
+    officialLink: "https://www.tourism.rajasthan.gov.in/",
     start: "Udaipur Airport/Railway Station (8:00 AM - Day 1)",
     end: "Udaipur Airport/Railway Station (6:00 PM - Day 4)",
     days: "4 Days / 3 Nights",
